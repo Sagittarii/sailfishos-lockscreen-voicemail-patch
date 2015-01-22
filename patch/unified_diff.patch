@@ -1,0 +1,32 @@
+--- /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml.orig   2015-01-20 20:55:32.224928108 +0100
++++ /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml    2015-01-20 22:22:28.496361601 +0100
+@@ -12,6 +12,7 @@
+ import org.nemomobile.time 1.0
+ import "../notifications"
+ import "../scripts/desktop.js" as Desktop
++import MeeGo.QOfono 0.2
+ 
+ MouseArea {
+     id: lockScreen
+@@ -254,6 +255,20 @@
+         anchors.bottom: clock.top
+     }
+ 
++    OfonoManager { id: ofonoManager }
++
++    OfonoMessageWaiting {
++        id: ofonoMessageWaiting
++        modemPath: ofonoManager.modems.length > 0 ? ofonoManager.modems[0] : ""
++    }
++
++    Image {
++        anchors.bottom: clock.top
++        source: "/usr/share/themes/jolla-ambient/meegotouch/icons/icon-s-voicemail.png"
++        visible: ofonoMessageWaiting.voicemailWaiting 
++    } 
++
++
+     SneakPeekHint {
+         id: sneakPeekHint
+     }
+

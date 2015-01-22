@@ -1,0 +1,8 @@
+{
+    "name": "Show voicemail on lockscreen",
+    "description": "Show voicemail on lockscreen",
+    "category": "homescreen",
+    "infos": {
+        "maintainer": "Zeta"
+    }
+}
