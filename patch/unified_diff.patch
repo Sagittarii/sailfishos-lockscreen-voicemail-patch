@@ -1,5 +1,5 @@
---- /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml.orig   2015-01-20 20:55:32.224928108 +0100
-+++ /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml    2015-01-20 22:22:28.496361601 +0100
+--- /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml.orig	2015-01-21 15:20:50.434335417 +0100
++++ /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml	2015-01-23 15:43:02.628146896 +0100
 @@ -12,6 +12,7 @@
  import org.nemomobile.time 1.0
  import "../notifications"
@@ -8,10 +8,28 @@
  
  MouseArea {
      id: lockScreen
-@@ -254,6 +255,20 @@
+@@ -232,6 +233,16 @@
+             Behavior on opacity { FadeAnimation {} }
+             visible: opacity > 0.0
+         }
++        /* Voicemail notification */
++        Image {
++            x: Theme.paddingLarge
++            anchors {
++                left: parent.left
++                leftMargin: 33
++            }
++            source: "/usr/share/themes/jolla-ambient/meegotouch/icons/icon-s-voicemail.png"
++            visible: ofonoMessageWaiting.voicemailWaiting
++        }
+     }
+ 
+     function showAccessNotificationsHint() {
+@@ -252,6 +263,15 @@
          anchors.bottom: clock.top
      }
  
++    /* Voicemail notification */
 +    OfonoManager { id: ofonoManager }
 +
 +    OfonoMessageWaiting {
@@ -19,14 +37,7 @@
 +        modemPath: ofonoManager.modems.length > 0 ? ofonoManager.modems[0] : ""
 +    }
 +
-+    Image {
-+        anchors.bottom: clock.top
-+        source: "/usr/share/themes/jolla-ambient/meegotouch/icons/icon-s-voicemail.png"
-+        visible: ofonoMessageWaiting.voicemailWaiting 
-+    } 
-+
 +
      SneakPeekHint {
          id: sneakPeekHint
      }
-
