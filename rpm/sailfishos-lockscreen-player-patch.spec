@@ -10,7 +10,7 @@ BuildArch: noarch
 # << macros
 
 Summary:   Lockscreen voicemail notification patch 
-Version:    0.0.1
+Version:    0.0.2
 Release:    1
 Group:      Qt/Qt
 License:    TODO
