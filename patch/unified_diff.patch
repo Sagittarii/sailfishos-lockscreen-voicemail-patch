@@ -1,16 +1,16 @@
---- /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml.orig	2015-01-21 15:20:50.434335417 +0100
-+++ /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml	2015-01-23 15:43:02.628146896 +0100
-@@ -12,6 +12,7 @@
- import org.nemomobile.time 1.0
+--- /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml.1.1.4	2015-04-22 23:52:05.133769751 +0200
++++ /usr/share/lipstick-jolla-home-qt5/lockscreen/Lockscreen.qml	2015-04-22 23:50:17.783390380 +0200
+@@ -13,6 +13,7 @@
+ import org.nemomobile.configuration 1.0
  import "../notifications"
  import "../scripts/desktop.js" as Desktop
 +import MeeGo.QOfono 0.2
  
  MouseArea {
      id: lockScreen
-@@ -232,6 +233,16 @@
-             Behavior on opacity { FadeAnimation {} }
-             visible: opacity > 0.0
+@@ -153,6 +154,17 @@
+                 FadeAnimation { }
+             }
          }
 +        /* Voicemail notification */
 +        Image {
@@ -22,10 +22,11 @@
 +            source: "/usr/share/themes/jolla-ambient/meegotouch/z1.0/icons/icon-s-voicemail.png"
 +            visible: ofonoMessageWaiting.voicemailWaiting
 +        }
++
      }
  
-     function showAccessNotificationsHint() {
-@@ -252,6 +263,15 @@
+     SimToolkitIdleModeIndicator {
+@@ -253,6 +265,15 @@
          anchors.bottom: clock.top
      }
  
@@ -41,3 +42,4 @@
      SneakPeekHint {
          id: sneakPeekHint
      }
+
