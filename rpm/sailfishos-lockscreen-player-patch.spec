@@ -10,13 +10,13 @@ BuildArch: noarch
 # << macros
 
 Summary:   Lockscreen voicemail notification patch 
-Version:    0.0.2
+Version:    0.0.3
 Release:    1
 Group:      Qt/Qt
-License:    TODO
+License:    Public Domain
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   patchmanager
-Requires:   sailfish-version >= 1.1.1
+Requires:   sailfish-version >= 1.1.4
 
 %description
 Lockscreen patch enabling to show an icon when you have a voicemail message to read.

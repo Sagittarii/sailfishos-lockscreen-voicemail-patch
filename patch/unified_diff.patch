@@ -19,7 +19,7 @@
 +                left: parent.left
 +                leftMargin: 33
 +            }
-+            source: "/usr/share/themes/jolla-ambient/meegotouch/icons/icon-s-voicemail.png"
++            source: "/usr/share/themes/jolla-ambient/meegotouch/z1.0/icons/icon-s-voicemail.png"
 +            visible: ofonoMessageWaiting.voicemailWaiting
 +        }
      }
